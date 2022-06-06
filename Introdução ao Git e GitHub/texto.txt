@@ -1,0 +1,81 @@
+***** Chave SSH *****
+------------------------------------
+1- Gerar chave:
+ssh-keygen -t ed25519 -C lsolanofonseca@gmail.com
+2- Ir no local onde foi criada a chave: /.ssh
+3- Ver a chave:
+cat id_ed25519  
+4- Copiar a chave e colar no site do GitHub.
+5- Iniciar o ssh agent:
+eval $(ssh-agent -s)
+6- Pegar o Agent Pid
+7- Passar a nossa chave privada para o Agent:
+ssh-add id_ed25519
+ 
+Para clonar um repositório do GitHub:
+----------------------------------------------
+1- Copiar o caminho ssh do repositório.
+2- Abrir o terminal e escrever: git clone (colar o caminho ssh do repositório)
+
+
+Token de Acesso Pessoal
+---------------------------------------------
+1- Criar o token no site e guardar em um arquivo seguro.
+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
+2- Copiar o caminho http do repositório.
+3- Abrir o terminal e escrever: git clone (colar o caminho http do repositório)
+
+
+
+***** Iniciando o Git e Criando um commit *****
+
+Criar um arquivo no Git
+------------------------------------------------
+1- Iniciar o git: git init
+2- Usar: ls -a para ver a pasta git oculta.
+3- Configurar o git config:
+	3.1 - Configurar email usando:
+		git config --global user.email "escrever email"
+	3.2 - Configurar nome de usuário usando:
+		git config --global user.name "escrever nome de usuário"
+4- Para adicionar o arquivo usar:
+   git add *
+5- Logo escrever:
+   git commit -m "escrever aqui uma descrição para esse commit"
+
+
+Ver status do git
+--------------------------------------------------
+1- Usar o comando:
+   git status
+
+Listar a configuração do git
+--------------------------------------------------
+1- Usar o comando:
+   git config --list
+
+Tirar alguma configuração existente
+--------------------------------------------------
+1- Usar o comando:
+   git config --global --unset user."propriedade"
+
+Subir a versão do nosso repositório local para a origem do repositório remoto(GitHub):
+--------------------------------------------------
+1- Usar o comando:
+   git remote add origin "link do repositório no GitHub" (https://github.com/LeoBlaugrana/livro-receitas.git)
+2- Para ver a lista de repositórios cadastrados:
+   git remove -v
+
+Subir o repositório local para o repositório remoto:
+---------------------------------------------------
+1- Usar o comando:
+   git push origin master
+
+### Quando da erro porque tem uma versão diferente no repositório remoto da que está no repositório local usar o comando:
+    git pull origin master
+
+
+
+
+
+
